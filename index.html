@@ -35,8 +35,6 @@
   -->
   <link rel="preload" as="image" href="./assets/images/hero-slider-1.jpg">
   <link rel="preload" as="image" href="./assets/images/hero-slider-2.jpg">
-  <link rel="preload" as="image" href="./assets/images/hero-slider-3.jpg">
-
 </head>
 
 <body id="top">
@@ -194,29 +192,17 @@
 
       </nav>
 
-      <a href="#" class="btn btn-secondary">
-        <span class="text text-1">Find A Table</span>
+     <!-- Find A Table Button -->
 
-        <span class="text text-2" aria-hidden="true">Find A Table</span>
-      </a>
+<!-- Modal for Table Layout -->
 
-      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
-        <span class="line line-1"></span>
-        <span class="line line-2"></span>
-        <span class="line line-3"></span>
-      </button>
-
-      <div class="overlay" data-nav-toggler data-overlay></div>
-
-    </div>
-  </header>
+   </div>
+  </div>
+</div>
+</header>
 
 
 
-
-
-  <main>
-    <article>
 
       <!-- 
         - #HERO
@@ -284,36 +270,11 @@
 
           </li>
          
-
-          <li class="slider-item" data-hero-slider-item>
-
-            <div class="slider-bg">
-              <img src="./assets/images/hero-slider-3.jpg" width="1880" height="950" alt="" class="img-cover">
-            </div>
-
-            <p class="label-2 section-subtitle slider-reveal">amazing & delicious</p>
-
-            <h1 class="display-1 hero-title slider-reveal">
-              Where every flavor <br>
-              tells a story
-            </h1>
-
-            <p class="body-2 hero-text slider-reveal">
-              Come with family & feel the joy of mouthwatering food
-            </p>
-
             <a href="#" class="btn btn-primary slider-reveal">
               <span class="text text-1">View Our Menu</span>
 
               <span class="text text-2" aria-hidden="true">View Our Menu</span>
             </a>
-
-          </li>
-
-        </ul>
-
-       
-
         <button class="slider-btn prev" aria-label="slide to previous" data-prev-btn>
           <ion-icon name="chevron-back"></ion-icon>
         </button>
@@ -324,17 +285,43 @@
         
         
 
-        <a href="#" class="hero-btn has-after">
-          <img src="./assets/images/hero-icon.png" width="48" height="48" alt="booking icon">
+       <!-- Book A Table Button -->
+         <!-- Book A Table Button -->
+<a href="#" class="hero-btn has-after" id="book-table-btn">
+  <img src="./assets/images/hero-icon.png" width="48" height="48" alt="booking icon">
+  <span class="label-2 text-center span">Book A Table</span>
+</a>
 
-          <span class="label-2 text-center span">Book A Table</span>
-        </a>
+<!-- Modal for Booking Tables -->
+<div id="table-modal" class="table-modal">
+  <span class="close-table-modal">&times;</span>
+  <div class="table-layout">
+    <h2>Select Your Table</h2>
+    
+    <!-- Tables Layout -->
+    <div class="tables">
+      <div class="table" data-table="1" data-booked="false">Table 1</div>
+      <div class="table" data-table="2" data-booked="false">Table 2</div>
+      <div class="table" data-table="3" data-booked="false">Table 3</div>
+      <div class="table" data-table="4" data-booked="false">Table 4</div>
+      <div class="table" data-table="5" data-booked="false">Table 5</div>
+      <div class="table" data-table="6" data-booked="false">Table 6</div>
+      <div class="table" data-table="7" data-booked="false">Table 7</div>
+      <div class="table" data-table="8" data-booked="false">Table 8</div>
+      <div class="table" data-table="9" data-booked="false">Table 9</div>
+      <div class="table" data-table="10" data-booked="false">Table 10</div>
+      <div class="table" data-table="11" data-booked="false">Table 11</div>
+      <div class="table" data-table="12" data-booked="false">Table 12</div>
+      <div class="table" data-table="13" data-booked="false">Table 13</div>
+      <div class="table" data-table="14" data-booked="false">Table 14</div>
+      <div class="table" data-table="15" data-booked="false">Table 15</div>
 
-      </section>
+    </div>
+  </div>
+</div>
 
-
-
-
+</ul>
+</section>
 
       <!-- 
         - #SERVICE

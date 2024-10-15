@@ -766,6 +766,68 @@ body.nav-active { overflow: hidden; }
   pointer-events: all;
 }
 
+/* Style for Table Modal */
+/* Modal styles */
+.table-modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+}
+
+.table-modal.active {
+  display: block;
+}
+
+.close-table-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+/* Table Layout */
+.tables {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.table {
+  width: 100px;
+  height: 100px;
+  background-color: #140e0e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.table:hover {
+  background-color: #544e4e;
+}
+
+.table[data-booked="true"] {
+  background-color: #28a745;
+  color: rgb(105, 94, 94);
+  cursor: not-allowed;
+}
+
+.table[data-booked="true"]::before {
+  content: "Booked";
+  position: absolute;
+  color: red;
+  font-size: 12px;
+}
 
 
 

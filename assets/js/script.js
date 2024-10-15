@@ -153,6 +153,81 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+  const bookTableBtn = document.getElementById('book-table-btn');
+  const tableModal = document.getElementById('table-modal');
+  const closeTableModalBtn = document.querySelector('.close-table-modal');
+  const tables = document.querySelectorAll('.table');
+
+  // Simulate table booking status persistence
+  let tableStatus = {
+    1: false,
+    2: false,
+    3: false,
+    4: false,
+    5: false,
+    6: false,
+    7: false,
+    8: false,
+    9: false,
+    10: false,
+    11: false,
+    12: false,
+    13: false,
+    14: false,
+    15: false
+  };
+
+  // Update the UI based on booking status
+  const updateTableUI = () => {
+    tables.forEach((table) => {
+      const tableNumber = table.getAttribute('data-table');
+      if (tableStatus[tableNumber]) {
+        table.setAttribute('data-booked', 'true');
+      } else {
+        table.setAttribute('data-booked', 'false');
+      }
+    });
+  };
+
+  // Open the table modal
+  bookTableBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    updateTableUI(); // Update UI based on booking status
+    tableModal.classList.add('active');
+  });
+
+  // Close the table modal
+  closeTableModalBtn.addEventListener('click', function () {
+    tableModal.classList.remove('active');
+  });
+
+  // Handle table booking
+  tables.forEach(function (table) {
+    table.addEventListener('click', function () {
+      const isBooked = this.getAttribute('data-booked') === 'true';
+      const tableNumber = this.getAttribute('data-table');
+
+      if (isBooked) {
+        alert(`Table ${tableNumber} is already booked.`);
+      } else {
+        const confirmBooking = confirm(`Do you want to book Table ${tableNumber}?`);
+        if (confirmBooking) {
+          tableStatus[tableNumber] = true; // Mark table as booked
+          updateTableUI();
+          alert(`Table ${tableNumber} has been successfully booked!`);
+        }
+      }
+    });
+  });
+
+  // Close the modal when clicking outside the modal content
+  window.addEventListener('click', function (e) {
+    if (e.target === tableModal) {
+      tableModal.classList.remove('active');
+    }
+  });
+});
 
 /**
  * PARALLAX EFFECT
